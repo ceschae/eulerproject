@@ -14,6 +14,6 @@ while primes[i] < len(primes):
             exps[i] = math.floor(math.log(len(primes), 10) / math.log(primes[i], 10))
         else:
             check = False
-    result = result * primes[i] ^ exps[i]
+    result = result * primes[i] ** exps[i]
     i += 1
 print(result)
