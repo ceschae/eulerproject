@@ -11,8 +11,16 @@ def isPalindrome(n):
     return True
 
 for i in range(999, 99, -1):
-    for j in range(999, 99, -1):
+    if i % 11 == 0:
+        jMax = 999
+        change = -1
+    else:
+        jMax = 990
+        change = -11
+    for j in range(jMax, i - 1, change):
         num = i * j
+        if num < max:
+            break
         if isPalindrome(num):
             if num > max:
                 max = num
