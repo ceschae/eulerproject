@@ -1,13 +1,22 @@
+import math
+
 num = 600851475143
 
-def isPrime(n):
-    for x in range(2, n):
-        if n % x == 0:
-            return False
-    print(n, end=", ")
-    return True
+lastfactor = 1
+while num % 2 == 0:
+    lastFactor = 2
+    num = num // 2
 
-for x in range(num // 2, 1, -1):
-    if num % x == 0 and isPrime(x):
-        print(x)
-        break
+factor = 3
+maxFactor = int(math.sqrt(num))
+while num > 1 and factor <= maxFactor:
+    while num % factor == 0:
+        num = num // factor
+        maxFactor = int(math.sqrt(num))
+        lastFactor = factor
+    factor += 2
+
+if num == 1:
+    print(lastFactor)
+else:
+    print(num)
