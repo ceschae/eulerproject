@@ -1,16 +1,16 @@
 max = 3999999
 
-nMinus2 = 1
+nMinus2 = 0
 nMinus1 = 2
-n = nMinus1 + nMinus2 # 3
+n = 4 * nMinus1 + nMinus2 # 8
 
-sum = 0
+sum = nMinus1
 
-while nMinus1 < max:
-    sum += nMinus1
+while n < max:
+    sum += n
 
-    nMinus2 = nMinus1 + n # 5
-    nMinus1 = n + nMinus2 # 8
-    n = nMinus1 + nMinus2 # 13
+    nMinus2 = nMinus1 # 2
+    nMinus1 = n # 8
+    n = 4 * nMinus1 + nMinus2 # 34
 
 print(sum)
