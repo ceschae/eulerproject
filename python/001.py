@@ -1,8 +1,9 @@
-max = 1000
-sum = 0
+max = 999
 
-for x in range(1, max):
-    if x % 3 == 0 or x % 5 == 0:
-        sum += x
+def SumOfMultiplesOf(n):
+    nearestInt = max // n
+    return n * (nearestInt * (nearestInt + 1)) // 2
 
-print(sum)
+result = SumOfMultiplesOf(3) + SumOfMultiplesOf(5) - SumOfMultiplesOf(15)
+
+print(result)
